@@ -1,0 +1,434 @@
+{
+  "collections": [
+    {
+      "id": "1",
+      "name": "EPIC: The Troy Saga (Official Concept Album)",
+      "artist": "Jorge Rivera-Herrans",
+      "type": "EP",
+      "songCount": 5,
+      "durationInSeconds": 940,
+      "sizeInBytes": 104857600,
+      "releasedOn": "2024-09-03T14:35:00Z",
+      "songs": [
+        {
+          "title": "The Horse and the Infant",
+          "durationInSeconds": 135,
+          "sizeInBytes": 15728640,
+          "performers": [
+            "Jorge Rivera-Herrans",
+            "Luke Holt",
+            "Cast of EPIC: The Musical"
+          ]
+        },
+        {
+          "title": "Just a Man",
+          "durationInSeconds": 150,
+          "sizeInBytes": 16777216,
+          "performers": ["Jorge Rivera-Herrans", "Cast of EPIC: The Musical"]
+        },
+        {
+          "title": "Battle Cry",
+          "durationInSeconds": 180,
+          "sizeInBytes": 18874368,
+          "performers": ["Jorge Rivera-Herrans"]
+        },
+        {
+          "title": "Warrior’s Fate",
+          "durationInSeconds": 210,
+          "sizeInBytes": 20971520,
+          "performers": ["Jorge Rivera-Herrans"]
+        },
+        {
+          "title": "Final Stand",
+          "durationInSeconds": 265,
+          "sizeInBytes": 22020096,
+          "performers": ["Jorge Rivera-Herrans"]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "EPIC: The Ocean Saga",
+      "artist": "Jorge Rivera-Herrans",
+      "type": "EP",
+      "songCount": 4,
+      "durationInSeconds": 780,
+      "sizeInBytes": 73400320,
+      "releasedOn": "2024-09-04T10:00:00Z",
+      "songs": [
+        {
+          "title": "Sailing into Destiny",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Jorge Rivera-Herrans", "Cast of EPIC: The Musical"]
+        },
+        {
+          "title": "The Tempest’s Call",
+          "durationInSeconds": 190,
+          "sizeInBytes": 17301504,
+          "performers": ["Jorge Rivera-Herrans"]
+        },
+        {
+          "title": "Lost at Sea",
+          "durationInSeconds": 210,
+          "sizeInBytes": 18874368,
+          "performers": ["Jorge Rivera-Herrans"]
+        },
+        {
+          "title": "Odyssey’s End",
+          "durationInSeconds": 180,
+          "sizeInBytes": 15728640,
+          "performers": ["Jorge Rivera-Herrans"]
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Echoes of Olympus",
+      "artist": "Mythic Harmonies",
+      "type": "Album",
+      "songCount": 7,
+      "durationInSeconds": 1320,
+      "sizeInBytes": 115343360,
+      "releasedOn": "2023-06-15T12:00:00Z",
+      "songs": [
+        {
+          "title": "Rise of the Gods",
+          "durationInSeconds": 180,
+          "sizeInBytes": 15728640,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Zeus' Wrath",
+          "durationInSeconds": 160,
+          "sizeInBytes": 13959168,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Hades’ Lament",
+          "durationInSeconds": 190,
+          "sizeInBytes": 16515072,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Ares’ Charge",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Aphrodite’s Embrace",
+          "durationInSeconds": 175,
+          "sizeInBytes": 15204352,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Hera’s Judgment",
+          "durationInSeconds": 215,
+          "sizeInBytes": 20316160,
+          "performers": ["Mythic Harmonies"]
+        },
+        {
+          "title": "Olympian Finale",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Mythic Harmonies"]
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Celestial Symphony",
+      "artist": "Ethereal Melodies",
+      "type": "Single",
+      "songCount": 1,
+      "durationInSeconds": 250,
+      "sizeInBytes": 20971520,
+      "releasedOn": "2023-12-21T18:00:00Z",
+      "songs": [
+        {
+          "title": "Stars Align",
+          "durationInSeconds": 250,
+          "sizeInBytes": 20971520,
+          "performers": ["Ethereal Melodies"]
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Legends of Atlantis",
+      "artist": "Aqua Harmonia",
+      "type": "Album",
+      "songCount": 6,
+      "durationInSeconds": 1100,
+      "sizeInBytes": 94371840,
+      "releasedOn": "2024-02-10T14:00:00Z",
+      "songs": [
+        {
+          "title": "Sunken Myths",
+          "durationInSeconds": 180,
+          "sizeInBytes": 15728640,
+          "performers": ["Aqua Harmonia"]
+        },
+        {
+          "title": "Atlantis Awakens",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Aqua Harmonia"]
+        },
+        {
+          "title": "Tidal Echoes",
+          "durationInSeconds": 190,
+          "sizeInBytes": 16515072,
+          "performers": ["Aqua Harmonia"]
+        },
+        {
+          "title": "Mystic Currents",
+          "durationInSeconds": 210,
+          "sizeInBytes": 18874368,
+          "performers": ["Aqua Harmonia"]
+        },
+        {
+          "title": "Legends' Requiem",
+          "durationInSeconds": 160,
+          "sizeInBytes": 13959168,
+          "performers": ["Aqua Harmonia"]
+        },
+        {
+          "title": "Ocean’s Whisper",
+          "durationInSeconds": 160,
+          "sizeInBytes": 13959168,
+          "performers": ["Aqua Harmonia"]
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Fire and Ice",
+      "artist": "Elemental Beats",
+      "type": "EP",
+      "songCount": 4,
+      "durationInSeconds": 850,
+      "sizeInBytes": 78643200,
+      "releasedOn": "2023-08-15T10:30:00Z",
+      "songs": [
+        {
+          "title": "Frozen Flames",
+          "durationInSeconds": 210,
+          "sizeInBytes": 18874368,
+          "performers": ["Elemental Beats"]
+        },
+        {
+          "title": "Inferno Dance",
+          "durationInSeconds": 220,
+          "sizeInBytes": 19922944,
+          "performers": ["Elemental Beats"]
+        },
+        {
+          "title": "Glacial Echoes",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Elemental Beats"]
+        },
+        {
+          "title": "Ashes to Ice",
+          "durationInSeconds": 220,
+          "sizeInBytes": 21495808,
+          "performers": ["Elemental Beats"]
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Neon Dreams",
+      "artist": "Synthwave Collective",
+      "type": "Album",
+      "songCount": 10,
+      "durationInSeconds": 2400,
+      "sizeInBytes": 209715200,
+      "releasedOn": "2022-11-05T16:00:00Z",
+      "songs": [
+        {
+          "title": "Cybernetic Horizon",
+          "durationInSeconds": 300,
+          "sizeInBytes": 26214400,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Retro Vibes",
+          "durationInSeconds": 230,
+          "sizeInBytes": 20971520,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Neon Highway",
+          "durationInSeconds": 240,
+          "sizeInBytes": 22020096,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Dreamwave",
+          "durationInSeconds": 210,
+          "sizeInBytes": 18874368,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Synth Paradise",
+          "durationInSeconds": 220,
+          "sizeInBytes": 19922944,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "City Lights",
+          "durationInSeconds": 260,
+          "sizeInBytes": 23592960,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Night Rider",
+          "durationInSeconds": 280,
+          "sizeInBytes": 25165824,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Electric Pulse",
+          "durationInSeconds": 250,
+          "sizeInBytes": 22649241,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Hologram Heart",
+          "durationInSeconds": 230,
+          "sizeInBytes": 20971520,
+          "performers": ["Synthwave Collective"]
+        },
+        {
+          "title": "Final Drive",
+          "durationInSeconds": 280,
+          "sizeInBytes": 25165824,
+          "performers": ["Synthwave Collective"]
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Moonlight Serenade",
+      "artist": "Luna Harmonix",
+      "type": "Single",
+      "songCount": 1,
+      "durationInSeconds": 270,
+      "sizeInBytes": 22649241,
+      "releasedOn": "2024-04-02T20:00:00Z",
+      "songs": [
+        {
+          "title": "Moonlit Waltz",
+          "durationInSeconds": 270,
+          "sizeInBytes": 22649241,
+          "performers": ["Luna Harmonix"]
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Astral Voyage",
+      "artist": "Cosmic Echoes",
+      "type": "Album",
+      "songCount": 8,
+      "durationInSeconds": 1920,
+      "sizeInBytes": 167772160,
+      "releasedOn": "2023-07-19T08:00:00Z",
+      "songs": [
+        {
+          "title": "Galactic Drift",
+          "durationInSeconds": 240,
+          "sizeInBytes": 20971520,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Nebula Dreams",
+          "durationInSeconds": 230,
+          "sizeInBytes": 19922944,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Interstellar Echoes",
+          "durationInSeconds": 250,
+          "sizeInBytes": 22020096,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Cosmic Journey",
+          "durationInSeconds": 260,
+          "sizeInBytes": 23592960,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Warp Drive",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Black Hole Serenade",
+          "durationInSeconds": 270,
+          "sizeInBytes": 22649241,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Astro Symphony",
+          "durationInSeconds": 280,
+          "sizeInBytes": 25165824,
+          "performers": ["Cosmic Echoes"]
+        },
+        {
+          "title": "Final Orbit",
+          "durationInSeconds": 190,
+          "sizeInBytes": 16515072,
+          "performers": ["Cosmic Echoes"]
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "name": "The Emerald Path",
+      "artist": "Mystic Journey",
+      "type": "EP",
+      "songCount": 5,
+      "durationInSeconds": 950,
+      "sizeInBytes": 83886080,
+      "releasedOn": "2023-09-10T12:30:00Z",
+      "songs": [
+        {
+          "title": "Into the Unknown",
+          "durationInSeconds": 190,
+          "sizeInBytes": 16777216,
+          "performers": ["Mystic Journey"]
+        },
+        {
+          "title": "Forest Whispers",
+          "durationInSeconds": 200,
+          "sizeInBytes": 18350080,
+          "performers": ["Mystic Journey"]
+        },
+        {
+          "title": "Path of Destiny",
+          "durationInSeconds": 210,
+          "sizeInBytes": 18874368,
+          "performers": ["Mystic Journey"]
+        },
+        {
+          "title": "Mystic Visions",
+          "durationInSeconds": 180,
+          "sizeInBytes": 15728640,
+          "performers": ["Mystic Journey"]
+        },
+        {
+          "title": "Ethereal Awakening",
+          "durationInSeconds": 170,
+          "sizeInBytes": 15204352,
+          "performers": ["Mystic Journey"]
+        }
+      ]
+    }
+  ]
+}

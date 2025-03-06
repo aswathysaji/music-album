@@ -7,7 +7,7 @@ const ArrowDown: React.FC<React.SVGProps<SVGElement>> = () => (
     height="20"
     fill="none"
     viewBox="0 0 20 20"
-    style={{ flexShrink: 0 }}
+    style={{ flexShrink: 0,cursor:'pointer' }}
   >
     <path
       fill="#08090A"
