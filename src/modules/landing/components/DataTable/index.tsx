@@ -9,7 +9,8 @@ import { useCollectionsFetch } from "../../hooks/use-collections-list";
 import { ReactNode } from "react";
 import { Button } from "@mui/material";
 import View from "../../../../../public/icons/View";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {formatDuration, formatFileSize, formatDateTime} from "../../../../../utils";
 
 interface Column {
   id:
@@ -64,8 +65,8 @@ interface Data {
   name: ReactNode;
   type: "EP" | "Album" | "Single";
   count: number;
-  duration: number;
-  size: number;
+  duration: string;
+  size: string;
   released_on: string;
   view_details: ReactNode;
 }
@@ -74,8 +75,8 @@ function createData(
   name: ReactNode,
   type: "EP" | "Album" | "Single",
   count: number,
-  duration: number,
-  size: number,
+  duration: string,
+  size: string,
   released_on: string,
   view_details: ReactNode
 ): Data {
@@ -83,9 +84,10 @@ function createData(
 }
 export default function DataTable() {
   const { collections, isLoading, error } = useCollectionsFetch();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading data</p>;
+  if (!collections) return;
   const rows = collections.map((collection) => {
     return createData(
       <div>
@@ -94,9 +96,9 @@ export default function DataTable() {
       </div>,
       collection.type,
       collection.songCount,
-      collection.durationInSeconds,
-      collection.sizeInBytes,
-      collection.releasedOn,
+      formatDuration(collection.durationInSeconds),
+      formatFileSize(collection.sizeInBytes),
+      formatDateTime(collection.releasedOn),
       <Button
         aria-label="view-details"
         startIcon={<View />}
@@ -108,8 +110,8 @@ export default function DataTable() {
           lineHeight: "20px",
           p: "4px",
         }}
-        onClick={()=>{
-          navigate(`/details/${collection.id}`)
+        onClick={() => {
+          navigate(`/details/${collection.id}`);
         }}
       >
         View details

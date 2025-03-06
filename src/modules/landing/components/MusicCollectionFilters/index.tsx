@@ -4,8 +4,10 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import Search from "../../../../../public/icons/Search";
 import { TypeFilter } from "../TypeFilter";
+import { useState } from "react";
 
 export const MusicCollectionFilters = () => {
+  const [query, setQuery] = useState("");
   return (
     <div
       className={css({
@@ -14,12 +16,16 @@ export const MusicCollectionFilters = () => {
         backgroundColor: "#FFFFFF",
         display: "flex",
         gap: "12px",
-        border:'1px #E6ECF0',
-        borderRadius:'8px'
+        border: "1px #E6ECF0",
+        borderRadius: "8px",
       })}
     >
       <FormControl sx={{ m: 0 }} variant="outlined">
         <OutlinedInput
+          value={query}
+          onChange={(event) => {
+            setQuery(event.target.value);
+          }}
           sx={{
             border: "1px #C2CAD3",
             borderRadius: "4px",

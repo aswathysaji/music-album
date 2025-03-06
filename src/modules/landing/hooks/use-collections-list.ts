@@ -11,11 +11,10 @@ export const useCollectionsFetch = () => {
       console.error("Validation Error:", result.error.format());
       throw new Error("Invalid API response format");
     }
-
     return result.data; // Return validated data
   };
   const {
-    data: collections = [],
+    data: collections,
     isLoading,
     error,
   } = useQuery({

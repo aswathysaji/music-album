@@ -6,6 +6,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useCollectionDetails } from "../../hooks/use-collection-details";
+import {formatDuration, formatFileSize} from "../../../../../utils";
 
 interface Column {
   id: "title" | "performers" | "duration" | "size";
@@ -15,48 +16,48 @@ interface Column {
 }
 
 const columns: readonly Column[] = [
-  { id: "title", label: "Song", minWidth: 588 },
-  { id: "performers", label: "Performers", minWidth: 120 },
+  { id: "title", label: "Song", minWidth: 412 },
+  { id: "performers", label: "Performers", minWidth: 500 },
   {
     id: "duration",
     label: "Duration",
-    minWidth: 120,
+    minWidth: 300,
     align: "left",
   },
   {
     id: "size",
     label: "Size",
-    minWidth: 120,
+    minWidth: 180,
     align: "left",
   },
 ];
 
 interface Data {
   title: string;
-  performers: string[];
-  duration: number;
-  size: number;
+  performers: string;
+  duration: string;
+  size: string;
 }
 
 function createData(
   title: string,
-  performers: string[],
-  duration: number,
-  size: number
+  performers: string,
+  duration: string,
+  size: string
 ): Data {
   return { title, performers, duration, size };
 }
 export default function CollectionDetailsTable() {
-  const { collections, isLoading, error } = useCollectionDetails();
-  if (!collections) return;
+  const { collection, isLoading, error } = useCollectionDetails();
+  if (!collection) return;
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading data</p>;
-  const rows = collections.songs.map((song) => {
+  const rows = collection.songs.map((song) => {
     return createData(
       song.title,
-      song.performers,
-      song.durationInSeconds,
-      song.sizeInBytes
+      song.performers.join(', '),
+      formatDuration(song.durationInSeconds),
+      formatFileSize(song.sizeInBytes)
     );
   });
   return (

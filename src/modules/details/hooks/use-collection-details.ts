@@ -18,7 +18,7 @@ export const useCollectionDetails = () => {
     return result.data; // Return validated data
   };
   const {
-    data: collections,
+    data: collection,
     isLoading,
     error,
   } = useQuery({
@@ -27,5 +27,6 @@ export const useCollectionDetails = () => {
     refetchOnMount: true,
     refetchOnWindowFocus: false,
   });
-  return { collections, isLoading, error };
+  const collectionName = collection?.name
+  return { collection, collectionName,isLoading, error };
 };
