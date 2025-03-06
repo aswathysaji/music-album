@@ -5,120 +5,62 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { useCollectionsFetch } from "../../../hooks/use-collections-list";
-import { ReactNode } from "react";
-import { Button } from "@mui/material";
-import View from "../../../../public/icons/View";
+import { useCollectionDetails } from "../../hooks/use-collection-details";
 
 interface Column {
-  id:
-    | "name"
-    | "count"
-    | "type"
-    | "duration"
-    | "size"
-    | "released_on"
-    | "view_details";
+  id: "title" | "performers" | "duration" | "size";
   label: string;
   minWidth?: number;
   align?: "left";
-  format?: (value: number) => string;
 }
 
 const columns: readonly Column[] = [
-  { id: "name", label: "Collection Name", minWidth: 588 },
-  { id: "type", label: "Type", minWidth: 120 },
-  {
-    id: "count",
-    label: "Song Count",
-    minWidth: 120,
-    align: "left",
-    format: (value: number) => value.toLocaleString("en-US"),
-  },
+  { id: "title", label: "Song", minWidth: 588 },
+  { id: "performers", label: "Performers", minWidth: 120 },
   {
     id: "duration",
     label: "Duration",
     minWidth: 120,
     align: "left",
-    format: (value: number) => value.toLocaleString("en-US"),
   },
   {
     id: "size",
     label: "Size",
     minWidth: 120,
     align: "left",
-    format: (value: number) => value.toFixed(2),
-  },
-  {
-    id: "released_on",
-    label: "Released on",
-    minWidth: 200,
-    align: "left",
-    format: (value: number) => value.toFixed(2),
-  },
-  {
-    id: "view_details",
-    label: "",
-    minWidth: 124,
-    align: "left",
-    format: (value: number) => value.toFixed(2),
   },
 ];
 
 interface Data {
-  name: ReactNode;
-  type: "EP" | "Album" | "Single";
-  count: number;
+  title: string;
+  performers: string[];
   duration: number;
   size: number;
-  released_on: string;
-  view_details: ReactNode;
 }
 
 function createData(
-  name: ReactNode,
-  type: "EP" | "Album" | "Single",
-  count: number,
+  title: string,
+  performers: string[],
   duration: number,
-  size: number,
-  released_on: string,
-  view_details: ReactNode
+  size: number
 ): Data {
-  return { name, type, count, duration, size, released_on, view_details };
+  return { title, performers, duration, size };
 }
-export default function DataTable() {
-  const { collections, isLoading, error } = useCollectionsFetch();
+export default function CollectionDetailsTable() {
+  const { collections, isLoading, error } = useCollectionDetails();
+  if (!collections) return;
   if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error loading data</p>;
-  const rows = collections.map((collection) => {
+  const rows = collections.songs.map((song) => {
     return createData(
-      <div>
-        <p>{collection.name}</p>
-        <p style={{ color: "#677A90" }}>{collection.artist}</p>
-      </div>,
-      collection.type,
-      collection.songCount,
-      collection.durationInSeconds,
-      collection.sizeInBytes,
-      collection.releasedOn,
-      <Button
-        aria-label="view-details"
-        startIcon={<View />}
-        sx={{
-          textTransform: "none",
-          color: "#025992",
-          fontWeight: 500,
-          fontSize: "12px",
-          lineHeight: "20px",
-          p: "4px",
-        }}
-      >
-        View details
-      </Button>
+      song.title,
+      song.performers,
+      song.durationInSeconds,
+      song.sizeInBytes
     );
   });
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <Paper sx={{ width: "100%", overflow: "hidden", boxShadow: "none" }}>
       <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
@@ -133,6 +75,7 @@ export default function DataTable() {
                     fontWeight: 500,
                     lineHeight: "24px",
                     color: "#29313A",
+                    borderBottomColor: "#C2CAD3",
                   }}
                   style={{ minWidth: column.minWidth }}
                 >
@@ -144,9 +87,15 @@ export default function DataTable() {
           <TableBody>
             {rows.map((row) => {
               return (
-                <TableRow hover role="checkbox" tabIndex={-1} key={row.duration}>
-                  {columns.map((column) => {
+                <TableRow
+                  hover
+                  role="checkbox"
+                  tabIndex={-1}
+                  key={row.duration}
+                >
+                  {columns.map((column, index) => {
                     const value = row[column.id];
+                    console.log(index < columns.length);
                     return (
                       <TableCell
                         sx={{
@@ -155,6 +104,7 @@ export default function DataTable() {
                           fontWeight: 400,
                           color: "#29313A",
                           lineHeight: "20px",
+                          borderBottomColor: "#E1E4E9",
                         }}
                         key={column.id}
                         align={column.align}

@@ -1,11 +1,10 @@
-import { GetCollectionsResponseSchema } from "./../../schema";
+import {  GetCollectionsResponseSchema } from "../../../../schema";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 export const useCollectionsFetch = () => {
   const fetchCollections = async () => {
     const res = await axios.get("http://localhost:3000/collections");
-
     // Validate with Zod
     const result = GetCollectionsResponseSchema.safeParse(res.data);
     if (!result.success) {
@@ -15,7 +14,6 @@ export const useCollectionsFetch = () => {
 
     return result.data; // Return validated data
   };
-
   const {
     data: collections = [],
     isLoading,
@@ -23,7 +21,8 @@ export const useCollectionsFetch = () => {
   } = useQuery({
     queryKey: ["collections"],
     queryFn: fetchCollections,
+    refetchOnMount: true,
+    refetchOnWindowFocus: false,
   });
-
   return { collections, isLoading, error };
 };

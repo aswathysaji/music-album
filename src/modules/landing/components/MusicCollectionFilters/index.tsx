@@ -1,8 +1,8 @@
-import { css } from "../../../../styled-system/css";
+import { css } from "../../../../../styled-system/css";
 import FormControl from "@mui/material/FormControl";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
-import Search from "../../../../public/icons/Search";
+import Search from "../../../../../public/icons/Search";
 import { TypeFilter } from "../TypeFilter";
 
 export const MusicCollectionFilters = () => {

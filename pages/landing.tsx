@@ -1,6 +1,6 @@
 import { Header } from "../src/modules/common/Header";
-import DataTable from "../src/modules/landing/DataTable";
-import { MusicCollectionFilters } from "../src/modules/landing/MusicCollectionFilters";
+import DataTable from "../src/modules/landing/components/DataTable";
+import { MusicCollectionFilters } from "../src/modules/landing/components/MusicCollectionFilters";
 import { css } from "../styled-system/css";
 
 export const Landing = () => {
