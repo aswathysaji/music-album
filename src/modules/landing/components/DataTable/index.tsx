@@ -4,7 +4,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import { Collection } from "../../../../../schema";
 import { DataTableRow } from "../DataTableRow";
-import { DataTableBody } from "../../DataTableBody";
+import { DataTableBody } from "../DataTableBody";
 
 type DataTableProps = {
   collections: Collection[];
