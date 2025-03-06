@@ -1,12 +1,40 @@
-# React + TypeScript + Vite
+# Music Album
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📥 Clone the Repository
 
-Currently, two official plugins are available:
+To get a copy of this repository on your local machine, run the following command:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```sh
+git clone https://github.com/aswathysaji/music-album.git
+```
 
-# music-album
+Then navigate into the directory:
 
-Command to run the json-server: `json-server --watch db.json`
+```sh
+cd music-album
+```
+
+## ▶️ Install Dependencies
+
+If your project requires dependencies, install them using:
+
+```sh
+npm install  # For Node.js projects
+yarn install  # If using Yarn
+pnpm install  # If using Pnpm
+```
+
+## 🚀 Run the Project
+
+To start the project, use the following command:
+
+```sh
+npm run dev  # For Node.js/React projects
+pnpm run dev  # If using Pnpm
+```
+
+To start the json-server, use the following command:
+
+```sh
+json-server --watch db.json  # 3000 will be the default port
+```
