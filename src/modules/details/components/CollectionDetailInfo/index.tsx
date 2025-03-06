@@ -34,6 +34,8 @@ export const CollectionDetailInfo = () => {
         px: "24px",
         backgroundColor: "#FFFFFF",
         display: "flex",
+        flexWrap:'wrap',
+        rowGap:'24px',
         justifyContent: "space-between",
         height: "fit",
         borderRadius: "8px",

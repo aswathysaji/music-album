@@ -15,6 +15,7 @@ export const MusicCollectionFilters = () => {
         px: "14px",
         backgroundColor: "#FFFFFF",
         display: "flex",
+        flexWrap:'wrap',
         gap: "12px",
         border: "1px #E6ECF0",
         borderRadius: "8px",
