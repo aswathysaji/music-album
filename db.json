@@ -1,0 +1,191 @@
+{
+    "collections": [
+      {
+        "id": "1",
+        "name": "EPIC: The Troy Saga (Official Concept Album)",
+        "artist": "Jorge Rivera-Herrans",
+        "type": "EP",
+        "songCount": 5,
+        "durationInSeconds": 940,
+        "sizeInBytes": 104857600,
+        "releasedOn": "2024-09-03T14:35:00Z",
+        "songs": [
+          {
+            "title": "The Horse and the Infant",
+            "durationInSeconds": 135,
+            "sizeInBytes": 15728640,
+            "performers": ["Jorge Rivera-Herrans", "Luke Holt", "Cast of EPIC: The Musical"]
+          },
+          {
+            "title": "Just a Man",
+            "durationInSeconds": 150,
+            "sizeInBytes": 16777216,
+            "performers": ["Jorge Rivera-Herrans", "Cast of EPIC: The Musical"]
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "EPIC: The Ocean Saga",
+        "artist": "Jorge Rivera-Herrans",
+        "type": "EP",
+        "songCount": 4,
+        "durationInSeconds": 780,
+        "sizeInBytes": 73400320,
+        "releasedOn": "2024-09-04T10:00:00Z",
+        "songs": [
+          {
+            "title": "Sailing into Destiny",
+            "durationInSeconds": 200,
+            "sizeInBytes": 18350080,
+            "performers": ["Jorge Rivera-Herrans", "Cast of EPIC: The Musical"]
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "name": "Echoes of Olympus",
+        "artist": "Mythic Harmonies",
+        "type": "Album",
+        "songCount": 7,
+        "durationInSeconds": 1320,
+        "sizeInBytes": 115343360,
+        "releasedOn": "2023-06-15T12:00:00Z",
+        "songs": [
+          {
+            "title": "Rise of the Gods",
+            "durationInSeconds": 180,
+            "sizeInBytes": 15728640,
+            "performers": ["Mythic Harmonies"]
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "name": "Celestial Symphony",
+        "artist": "Ethereal Melodies",
+        "type": "Single",
+        "songCount": 1,
+        "durationInSeconds": 250,
+        "sizeInBytes": 20971520,
+        "releasedOn": "2023-12-21T18:00:00Z",
+        "songs": [
+          {
+            "title": "Stars Align",
+            "durationInSeconds": 250,
+            "sizeInBytes": 20971520,
+            "performers": ["Ethereal Melodies"]
+          }
+        ]
+      },
+      {
+        "id": "5",
+        "name": "Legends of Atlantis",
+        "artist": "Aqua Harmonia",
+        "type": "Album",
+        "songCount": 6,
+        "durationInSeconds": 1100,
+        "sizeInBytes": 94371840,
+        "releasedOn": "2024-02-10T14:00:00Z",
+        "songs": [
+          {
+            "title": "Sunken Myths",
+            "durationInSeconds": 180,
+            "sizeInBytes": 15728640,
+            "performers": ["Aqua Harmonia"]
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "name": "Fire and Ice",
+        "artist": "Elemental Beats",
+        "type": "EP",
+        "songCount": 4,
+        "durationInSeconds": 850,
+        "sizeInBytes": 78643200,
+        "releasedOn": "2023-08-15T10:30:00Z",
+        "songs": [
+          {
+            "title": "Frozen Flames",
+            "durationInSeconds": 210,
+            "sizeInBytes": 18874368,
+            "performers": ["Elemental Beats"]
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "name": "Neon Dreams",
+        "artist": "Synthwave Collective",
+        "type": "Album",
+        "songCount": 10,
+        "durationInSeconds": 2400,
+        "sizeInBytes": 209715200,
+        "releasedOn": "2022-11-05T16:00:00Z",
+        "songs": [
+          {
+            "title": "Cybernetic Horizon",
+            "durationInSeconds": 300,
+            "sizeInBytes": 26214400,
+            "performers": ["Synthwave Collective"]
+          }
+        ]
+      },
+      {
+        "id": "8",
+        "name": "Moonlight Serenade",
+        "artist": "Luna Harmonix",
+        "type": "Single",
+        "songCount": 1,
+        "durationInSeconds": 270,
+        "sizeInBytes": 22649241,
+        "releasedOn": "2024-04-02T20:00:00Z",
+        "songs": [
+          {
+            "title": "Moonlit Waltz",
+            "durationInSeconds": 270,
+            "sizeInBytes": 22649241,
+            "performers": ["Luna Harmonix"]
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "name": "Astral Voyage",
+        "artist": "Cosmic Echoes",
+        "type": "Album",
+        "songCount": 8,
+        "durationInSeconds": 1920,
+        "sizeInBytes": 167772160,
+        "releasedOn": "2023-07-19T08:00:00Z",
+        "songs": [
+          {
+            "title": "Galactic Drift",
+            "durationInSeconds": 240,
+            "sizeInBytes": 20971520,
+            "performers": ["Cosmic Echoes"]
+          }
+        ]
+      },
+      {
+        "id": "10",
+        "name": "The Emerald Path",
+        "artist": "Mystic Journey",
+        "type": "EP",
+        "songCount": 5,
+        "durationInSeconds": 950,
+        "sizeInBytes": 83886080,
+        "releasedOn": "2023-09-10T12:30:00Z",
+        "songs": [
+          {
+            "title": "Into the Unknown",
+            "durationInSeconds": 190,
+            "sizeInBytes": 16777216,
+            "performers": ["Mystic Journey"]
+          }
+        ]
+      }
+    ]
+  }
+  
