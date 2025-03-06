@@ -4,11 +4,12 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Checkbox from "@mui/material/Checkbox";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import ArrowDown from "../../../../../public/icons/ArrowDown";
 import { css } from "../../../../../styled-system/css";
 import UncheckedCheckBox from "../../../../../public/icons/UncheckedCheckBox";
 import CheckedCheckBox from "../../../../../public/icons/CheckedCheckBox";
+import { Collection } from "../../../../../schema";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -39,13 +40,26 @@ const types = [
   { name: "Single", id: "SINGLE" },
 ];
 
-export const TypeFilter = () => {
+type TypeFilterProps = {
+  collections: Collection[];
+  setFilteredCollections: Dispatch<SetStateAction<Collection[]>>;
+};
+
+export const TypeFilter = (props: TypeFilterProps) => {
+  const { collections, setFilteredCollections } = props;
   const [filterTypes, setFilterTypes] = useState<string[]>([]);
   const handleChange = (event: SelectChangeEvent<typeof filterTypes>) => {
     const {
       target: { value },
     } = event;
     setFilterTypes(typeof value === "string" ? value.split(",") : value);
+    if (!value.length) {
+      setFilteredCollections(collections);
+      return;
+    }
+    setFilteredCollections(
+      collections.filter((collection) => value.includes(collection.type))
+    );
   };
   return (
     <FormControl

@@ -4,10 +4,28 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
 import Search from "../../../../../public/icons/Search";
 import { TypeFilter } from "../TypeFilter";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import { Collection } from "../../../../../schema";
 
-export const MusicCollectionFilters = () => {
+type MusicCollectionFiltersProps = {
+  collections: Collection[];
+  setFilteredCollections: Dispatch<SetStateAction<Collection[]>>;
+};
+
+export const MusicCollectionFilters = (props: MusicCollectionFiltersProps) => {
+  const { collections, setFilteredCollections } = props;
   const [query, setQuery] = useState("");
+  const handleSearch = (value: string) => {
+    if (value.trim() === "") {
+      setFilteredCollections(collections);
+      return;
+    }
+    setFilteredCollections(
+      collections.filter((collection) =>
+        collection.name.toLowerCase().includes(value.toLowerCase())
+      )
+    );
+  };
   return (
     <div
       className={css({
@@ -15,6 +33,7 @@ export const MusicCollectionFilters = () => {
         px: "14px",
         backgroundColor: "#FFFFFF",
         display: "flex",
+        flexWrap: "wrap",
         gap: "12px",
         border: "1px #E6ECF0",
         borderRadius: "8px",
@@ -25,6 +44,7 @@ export const MusicCollectionFilters = () => {
           value={query}
           onChange={(event) => {
             setQuery(event.target.value);
+            handleSearch(event.target.value);
           }}
           sx={{
             border: "1px #C2CAD3",
@@ -60,7 +80,7 @@ export const MusicCollectionFilters = () => {
           }}
         />
       </FormControl>
-      <TypeFilter />
+      <TypeFilter collections={collections} setFilteredCollections={setFilteredCollections}  />
     </div>
   );
 };

@@ -5,12 +5,12 @@ import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import { useCollectionsFetch } from "../../hooks/use-collections-list";
 import { ReactNode } from "react";
 import { Button } from "@mui/material";
 import View from "../../../../../public/icons/View";
 import { useNavigate } from "react-router-dom";
 import {formatDuration, formatFileSize, formatDateTime} from "../../../../../utils";
+import { Collection } from "../../../../../schema";
 
 interface Column {
   id:
@@ -82,11 +82,14 @@ function createData(
 ): Data {
   return { name, type, count, duration, size, released_on, view_details };
 }
-export default function DataTable() {
-  const { collections, isLoading, error } = useCollectionsFetch();
+
+type DataTableProps = {
+  collections:Collection[]
+}
+
+export default function DataTable(props:DataTableProps) {
+  const {collections} = props
   const navigate = useNavigate();
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error loading data</p>;
   if (!collections) return;
   const rows = collections.map((collection) => {
     return createData(
