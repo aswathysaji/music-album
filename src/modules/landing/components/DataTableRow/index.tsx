@@ -11,7 +11,6 @@ type DataTableRowProps = {
 
 export const DataTableRow = (props: DataTableRowProps) => {
   const { setOrderBy, setOrder, order, orderBy } = props;
-  console.log(order,orderBy);
   
   const handleSort = (property: keyof Data) => {
     const isAsc = orderBy === property && order === "asc";
