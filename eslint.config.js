@@ -23,7 +23,7 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      "no-console": "off",
+      "no-console": "error",
         "no-restricted-syntax": [
             "error",
             {

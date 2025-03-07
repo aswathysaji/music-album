@@ -75,7 +75,6 @@ export default function CollectionDetailsTable() {
                 >
                   {columns.map((column, index) => {
                     const value = row[column.id];
-                    console.log(index < columns.length);
                     return (
                       <TableCell
                         sx={{

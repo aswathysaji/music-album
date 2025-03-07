@@ -12,7 +12,6 @@ export const useCollectionDetails = () => {
     // Validate with Zod
     const result = GetCollectionDetailsResponseSchema.safeParse(res.data);
     if (!result.success) {
-      console.error("Validation Error:", result.error.format());
       throw new Error("Invalid API response format");
     }
     return result.data; // Return validated data
