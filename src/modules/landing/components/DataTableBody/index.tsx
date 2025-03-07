@@ -13,6 +13,8 @@ import { columns } from "../../utils/table-data";
 
 type DataTableBodyProps = {
   collections: Collection[];
+  order: "asc" | "desc";
+  orderBy: keyof Data;
 };
 
 function createData(
@@ -28,15 +30,15 @@ function createData(
 }
 
 export const DataTableBody = (props: DataTableBodyProps) => {
-  const { collections } = props;
+  const { collections, order, orderBy } = props;
   const navigate = useNavigate();
   if (!collections) return;
   const rows = collections.map((collection) => {
     return createData(
-      <div>
+      <>
         <p>{collection.name}</p>
         <p style={{ color: "#677A90" }}>{collection.artist}</p>
-      </div>,
+      </>,
       collection.type,
       collection.songCount,
       formatDuration(collection.durationInSeconds),
@@ -61,10 +63,29 @@ export const DataTableBody = (props: DataTableBodyProps) => {
       </Button>
     );
   });
+  const sortedRows = [...rows].sort((a, b) => {
+    if (orderBy === "view_details") return 0;
+    if (orderBy === "name") {
+      if (
+        (a[orderBy] as any)?.props?.children?.[0].props.children <
+        (b[orderBy] as any)?.props?.children?.[0].props.children
+      )
+        return order === "asc" ? -1 : 1;
+      if (
+        (a[orderBy] as any)?.props?.children?.[0].props.children >
+        (b[orderBy] as any)?.props?.children?.[0].props.children
+      )
+        return order === "asc" ? 1 : -1;
+      return 0;
+    }
+    if (a[orderBy] < b[orderBy]) return order === "asc" ? -1 : 1;
+    if (a[orderBy] > b[orderBy]) return order === "asc" ? 1 : -1;
+    return 0;
+  });
   return (
     <TableBody>
-      {rows.length ? (
-        rows.map((row) => {
+      {sortedRows.length ? (
+        sortedRows.map((row) => {
           return (
             <TableRow hover role="checkbox" tabIndex={-1} key={row.duration}>
               {columns.map((column) => {
