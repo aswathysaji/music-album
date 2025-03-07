@@ -7,13 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import { useCollectionDetails } from "../../hooks/use-collection-details";
 import {formatDuration, formatFileSize} from "../../../../../utils";
-
-interface Column {
-  id: "title" | "performers" | "duration" | "size";
-  label: string;
-  minWidth?: number;
-  align?: "left";
-}
+import { Column, createData } from "../../types/table";
 
 const columns: readonly Column[] = [
   { id: "title", label: "Song", minWidth: 412 },
@@ -32,21 +26,6 @@ const columns: readonly Column[] = [
   },
 ];
 
-interface Data {
-  title: string;
-  performers: string;
-  duration: string;
-  size: string;
-}
-
-function createData(
-  title: string,
-  performers: string,
-  duration: string,
-  size: string
-): Data {
-  return { title, performers, duration, size };
-}
 export default function CollectionDetailsTable() {
   const { collection, isLoading, error } = useCollectionDetails();
   if (!collection) return;
@@ -61,7 +40,7 @@ export default function CollectionDetailsTable() {
     );
   });
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden", boxShadow: "none" }}>
+    <Paper sx={{ width: "100%", overflow: "hidden", boxShadow: "none",borderRadius:'8px' }}>
       <TableContainer>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>

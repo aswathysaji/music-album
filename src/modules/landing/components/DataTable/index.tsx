@@ -13,7 +13,15 @@ type DataTableProps = {
 export default function DataTable(props: DataTableProps) {
   const { collections } = props;
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden", boxShadow: "none" }}>
+    <Paper
+      sx={{
+        width: "100%",
+        overflow: "hidden",
+        boxShadow: "none",
+        borderBottomLeftRadius: "8px",
+        borderBottomRightRadius:'8px'
+      }}
+    >
       <TableContainer>
         <Table stickyHeader aria-label="music-collections-listing-table">
           <TableHead>
