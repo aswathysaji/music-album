@@ -8,7 +8,6 @@ export const useCollectionsFetch = () => {
     // Validate with Zod
     const result = GetCollectionsResponseSchema.safeParse(res.data);
     if (!result.success) {
-      console.error("Validation Error:", result.error.format());
       throw new Error("Invalid API response format");
     }
     return result.data; // Return validated data

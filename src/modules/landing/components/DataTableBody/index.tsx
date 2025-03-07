@@ -1,15 +1,15 @@
 import { Button, TableBody, TableCell, TableRow } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { Collection } from "../../../../schema";
+import { Collection } from "../../../../../schema";
 import { ReactNode } from "react";
-import { Data } from "../types/data-table";
+import { Data } from "../../types/data-table";
 import {
   formatDateTime,
   formatDuration,
   formatFileSize,
-} from "../../../../utils";
-import View from "../../../../public/icons/View";
-import { columns } from "../utils/table-data";
+} from "../../../../../utils";
+import View from "../../../../../public/icons/View";
+import { columns } from "../../utils/table-data";
 
 type DataTableBodyProps = {
   collections: Collection[];
