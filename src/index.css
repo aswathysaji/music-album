@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Montaga&display=swap");
 :root {
   font-family: "Commissioner", sans-serif;
+  color:'#29313A';
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

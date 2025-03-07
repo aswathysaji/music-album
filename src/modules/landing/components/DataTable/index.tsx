@@ -5,6 +5,8 @@ import TableHead from "@mui/material/TableHead";
 import { Collection } from "../../../../../schema";
 import { DataTableRow } from "../DataTableRow";
 import { DataTableBody } from "../DataTableBody";
+import { useState } from "react";
+import { Data } from "../../types/data-table";
 
 type DataTableProps = {
   collections: Collection[];
@@ -12,6 +14,8 @@ type DataTableProps = {
 
 export default function DataTable(props: DataTableProps) {
   const { collections } = props;
+  const [orderBy, setOrderBy] = useState<keyof Data>("name");
+  const [order, setOrder] = useState<"asc" | "desc">("asc");
   return (
     <Paper
       sx={{
@@ -19,15 +23,24 @@ export default function DataTable(props: DataTableProps) {
         overflow: "hidden",
         boxShadow: "none",
         borderBottomLeftRadius: "8px",
-        borderBottomRightRadius:'8px'
+        borderBottomRightRadius: "8px",
       }}
     >
       <TableContainer>
         <Table stickyHeader aria-label="music-collections-listing-table">
           <TableHead>
-            <DataTableRow />
+            <DataTableRow
+              order={order}
+              orderBy={orderBy}
+              setOrderBy={setOrderBy}
+              setOrder={setOrder}
+            />
           </TableHead>
-          <DataTableBody collections={collections} />
+          <DataTableBody
+            collections={collections}
+            orderBy={orderBy}
+            order={order}
+          />
         </Table>
       </TableContainer>
     </Paper>

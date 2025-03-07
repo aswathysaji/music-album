@@ -1,7 +1,22 @@
-import { TableCell, TableRow } from "@mui/material";
+import { TableCell, TableRow, TableSortLabel } from "@mui/material";
 import { columns } from "../../utils/table-data";
+import { Data } from "../../types/data-table";
 
-export const DataTableRow = () => {
+type DataTableRowProps = {
+  orderBy: keyof Data;
+  setOrderBy: React.Dispatch<React.SetStateAction<keyof Data>>;
+  order: "asc" | "desc";
+  setOrder: React.Dispatch<React.SetStateAction<"desc" | "asc">>;
+};
+
+export const DataTableRow = (props: DataTableRowProps) => {
+  const { setOrderBy, setOrder, order, orderBy } = props;
+
+  const handleSort = (property: keyof Data) => {
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
+    setOrderBy(property);
+  };
   return (
     <TableRow>
       {columns.map((column) => (
@@ -18,7 +33,14 @@ export const DataTableRow = () => {
           }}
           style={{ minWidth: column.minWidth }}
         >
-          {column.label}
+          <TableSortLabel
+            style={{ color: "#29313A" }}
+            active={orderBy === column.id}
+            direction={orderBy === column.id ? order : "asc"}
+            onClick={() => handleSort(column.id)}
+          >
+            {column.label}
+          </TableSortLabel>
         </TableCell>
       ))}
     </TableRow>

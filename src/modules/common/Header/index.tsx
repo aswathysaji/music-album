@@ -15,6 +15,7 @@ export const Header = (props: HeaderProps) => {
           fontWeight: "500",
           fontSize: "24px",
           lineHeight: "28px",
+          color:'#29313A',
         })}
       >
         {title}

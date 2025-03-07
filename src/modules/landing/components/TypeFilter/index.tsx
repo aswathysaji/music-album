@@ -100,6 +100,7 @@ export const TypeFilter = (props: TypeFilterProps) => {
                   fontSize: "12px",
                   lineHeight: "20px",
                   px: "4px",
+                  color:'#29313A'
                 })}
               >
                 Type
@@ -128,18 +129,18 @@ export const TypeFilter = (props: TypeFilterProps) => {
             sx={{
               p: 0,
               height: "32px",
-              backgroundColor: "transparent !important", // ✅ Remove background color
-              "&:hover": {
-                backgroundColor: "transparent !important", // ✅ Prevent hover effect
+              '&.MuiButtonBase-root.MuiMenuItem-root.Mui-selected':{
+                backgroundColor: "transparent !important", // ✅ Remove background color
               },
               gap: "8px",
+              borderRadius: "4px",
             }}
           >
             <Checkbox
               icon={<UncheckedCheckBox />}
               checkedIcon={<CheckedCheckBox />}
               checked={filterTypes.includes(type.name)}
-              sx={{ p: "5px" }}
+              sx={{ p: 0 }}
             />
             <ListItemText primary={type.name} />
           </MenuItem>
