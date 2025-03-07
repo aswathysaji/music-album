@@ -15,11 +15,11 @@ export type Column = {
 };
 
 export type Data = {
-  name: ReactNode;
+  name: string;
   type: "EP" | "Album" | "Single";
   count: number;
-  duration: string;
-  size: string;
-  released_on: string;
+  duration: number;
+  size: number;
+  released_on: Date;
   view_details: ReactNode;
 };

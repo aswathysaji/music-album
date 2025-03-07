@@ -100,6 +100,7 @@ export const TypeFilter = (props: TypeFilterProps) => {
                   fontSize: "12px",
                   lineHeight: "20px",
                   px: "4px",
+                  color:'#29313A'
                 })}
               >
                 Type

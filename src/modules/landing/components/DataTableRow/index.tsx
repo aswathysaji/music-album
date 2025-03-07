@@ -11,7 +11,7 @@ type DataTableRowProps = {
 
 export const DataTableRow = (props: DataTableRowProps) => {
   const { setOrderBy, setOrder, order, orderBy } = props;
-  
+
   const handleSort = (property: keyof Data) => {
     const isAsc = orderBy === property && order === "asc";
     setOrder(isAsc ? "desc" : "asc");
@@ -33,18 +33,14 @@ export const DataTableRow = (props: DataTableRowProps) => {
           }}
           style={{ minWidth: column.minWidth }}
         >
-          {/* {column.id !== "name" ? (
-            
-          ) : (
-            column.label
-          )} */}
           <TableSortLabel
-              active={orderBy === column.id}
-              direction={orderBy === column.id ? order : "asc"}
-              onClick={() => handleSort(column.id)}
-            >
-              {column.label}
-            </TableSortLabel>
+            style={{ color: "#29313A" }}
+            active={orderBy === column.id}
+            direction={orderBy === column.id ? order : "asc"}
+            onClick={() => handleSort(column.id)}
+          >
+            {column.label}
+          </TableSortLabel>
         </TableCell>
       ))}
     </TableRow>

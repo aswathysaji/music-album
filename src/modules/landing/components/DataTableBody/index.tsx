@@ -10,6 +10,7 @@ import {
 } from "../../../../../utils";
 import View from "../../../../../public/icons/View";
 import { columns } from "../../utils/table-data";
+import { css } from "../../../../../styled-system/css";
 
 type DataTableBodyProps = {
   collections: Collection[];
@@ -18,12 +19,12 @@ type DataTableBodyProps = {
 };
 
 function createData(
-  name: ReactNode,
+  name: string,
   type: "EP" | "Album" | "Single",
   count: number,
-  duration: string,
-  size: string,
-  released_on: string,
+  duration: number,
+  size: number,
+  released_on: Date,
   view_details: ReactNode
 ): Data {
   return { name, type, count, duration, size, released_on, view_details };
@@ -35,15 +36,12 @@ export const DataTableBody = (props: DataTableBodyProps) => {
   if (!collections) return;
   const rows = collections.map((collection) => {
     return createData(
-      <>
-        <p>{collection.name}</p>
-        <p style={{ color: "#677A90" }}>{collection.artist}</p>
-      </>,
+      collection.name,
       collection.type,
       collection.songCount,
-      formatDuration(collection.durationInSeconds),
-      formatFileSize(collection.sizeInBytes),
-      formatDateTime(collection.releasedOn),
+      collection.durationInSeconds,
+      collection.sizeInBytes,
+      new Date(collection.releasedOn),
       <Button
         aria-label="view-details"
         startIcon={<View />}
@@ -65,19 +63,6 @@ export const DataTableBody = (props: DataTableBodyProps) => {
   });
   const sortedRows = [...rows].sort((a, b) => {
     if (orderBy === "view_details") return 0;
-    if (orderBy === "name") {
-      if (
-        (a[orderBy] as any)?.props?.children?.[0].props.children <
-        (b[orderBy] as any)?.props?.children?.[0].props.children
-      )
-        return order === "asc" ? -1 : 1;
-      if (
-        (a[orderBy] as any)?.props?.children?.[0].props.children >
-        (b[orderBy] as any)?.props?.children?.[0].props.children
-      )
-        return order === "asc" ? 1 : -1;
-      return 0;
-    }
     if (a[orderBy] < b[orderBy]) return order === "asc" ? -1 : 1;
     if (a[orderBy] > b[orderBy]) return order === "asc" ? 1 : -1;
     return 0;
@@ -87,9 +72,8 @@ export const DataTableBody = (props: DataTableBodyProps) => {
       {sortedRows.length ? (
         sortedRows.map((row) => {
           return (
-            <TableRow hover role="checkbox" tabIndex={-1} key={row.duration}>
+            <TableRow hover role="checkbox" tabIndex={-1} key={row.name}>
               {columns.map((column) => {
-                const value = row[column.id];
                 return (
                   <TableCell
                     sx={{
@@ -103,7 +87,26 @@ export const DataTableBody = (props: DataTableBodyProps) => {
                     key={column.id}
                     align={column.align}
                   >
-                    {value}
+                    {column.id === "name" ? (
+                      <div>
+                        <p>{row.name}</p>
+                        <p className={css({color:'#677A90'})}>
+                          {
+                            collections.find(
+                              (collection) => collection.name === row.name
+                            )?.artist
+                          }
+                        </p>
+                      </div>
+                    ) : column.id === "duration" ? (
+                      formatDuration(row.duration)
+                    ) : column.id === "size" ? (
+                      formatFileSize(row.size)
+                    ) : column.id === "released_on" ? (
+                      formatDateTime(row.released_on.toISOString())
+                    ) : (
+                      row[column.id]
+                    )}
                   </TableCell>
                 );
               })}
