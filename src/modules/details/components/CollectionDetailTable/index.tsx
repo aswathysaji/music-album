@@ -73,7 +73,7 @@ export default function CollectionDetailsTable() {
                   tabIndex={-1}
                   key={row.duration}
                 >
-                  {columns.map((column, index) => {
+                  {columns.map((column) => {
                     const value = row[column.id];
                     return (
                       <TableCell
