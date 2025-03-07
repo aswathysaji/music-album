@@ -84,6 +84,7 @@ export default function CollectionDetailsTable() {
                     active={orderBy === column.id}
                     direction={orderBy === column.id ? order : "asc"}
                     onClick={() => handleSort(column.id)}
+                    style={{ color: "#29313A" }}
                   >
                     {column.label}
                   </TableSortLabel>
@@ -94,12 +95,7 @@ export default function CollectionDetailsTable() {
           <TableBody>
             {sortedRows.map((row) => {
               return (
-                <TableRow
-                  hover
-                  role="checkbox"
-                  tabIndex={-1}
-                  key={row.duration}
-                >
+                <TableRow hover role="checkbox" tabIndex={-1} key={row.title}>
                   {columns.map((column) => {
                     const value = row[column.id];
                     return (
